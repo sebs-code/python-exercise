@@ -11,7 +11,7 @@ Technical requrements:
 
 - Write code as you normally would write for deployment to a production environment.
 - Use Python version 3+.
-- Provide instructions on how to install and run the application
+- Provide instructions on how to install and run the application.
 - Document how you could deploy and monitor the application.
 
 Try to spend no more than 4 hours on the exercise.
