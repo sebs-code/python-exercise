@@ -10,7 +10,7 @@ High level requirements:
 Technical requrements:
 
 - Write code as you normally would write for deployment to a production environment.
-- Use Python version 3+.
+- Use Python version 3.6+.
 - Provide instructions on how to install and run the application.
 - Document how you could deploy and monitor the application.
 
