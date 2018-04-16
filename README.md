@@ -2,7 +2,7 @@
 
 High level requirements:
 
-- Use the http://fixer.io/ API to ingest daily currency rates.
+- Use the http://fixer.io/ API to ingest currency rates.
 - Have the ingest & store procedure run daily at 9:00AM.
 - Ingest and store rates for all days *except* weekends.
 - Ensure the system holds at least the last month of rates information.
