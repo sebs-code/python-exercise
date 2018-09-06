@@ -1,18 +1,27 @@
-# Python Exercise
+# Pyfixer
 
-High level requirements:
+Pyfixer is a small script that queries and stores data from the http://fixer.io/ API. The script will query data for the currencies provided. Scheduling is agnostic and is left at the developers discretion (in the example below we will be using a cron job for scheduling).
 
-- Use the http://fixer.io/ API to ingest currency rates.
-- Have the ingest & store procedure run daily at 9:00AM.
-- Ingest and store rates for all days *except* weekends.
-- Ensure the system holds at least the last month of rates information.
+### Requirements:
+- Python 3.6+
 
-Technical requrements:
+### Installation
+1) Clone the repository to a local directory
+2) Install the Python dependencies from the requirements.txt file (you may wish you use a virtual environment).
+3) The script can be run manually (src/fixer.py) or scheduling can be set up.
 
-- Write code as you normally would write for deployment to a production environment.
-- Use Python version 3.6+.
-- Provide instructions on how to install and run the application.
-- Document (in a text/markdown file) how you could go about deploying & monitoring the application.
-- If you ran out of time on any of the high level requirements, write down which you specifically did not yet implement.
+### Scheduling
+To set up basic scheduling for 9am weekdays, add the following to your crontab file:
+0 9 * * 1-5 path/to/fixer.py
 
-Try to spend no more than 4 hours on the exercise. Submit a pull request with your code or send it directly via email.
+### Assumptions
+Original specifications require that 'The system holds at least the last month of rates information'. Month is not specified here (30 days / 4 weeks / a calendar month), so the assumption of 30 days has been used. 
+
+### Deployment
+Deployment could vary. The simplest deployment using crontab and a local machine is described above. For a more robust deployment there are a couple of options:
+
+1) Deploy onto an AWS Lambda endpoint and schedule polling and monitoring via AWS also.
+2) Deploy onto a dedicated server / cloud based server and use celery for scheduling. Add logging handlers to email / txt admins in the event of ERROR or CRITICAL failure.
+
+### Future enhancements
+Increase testing, improve logging.
