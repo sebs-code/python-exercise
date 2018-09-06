@@ -1,0 +1,4 @@
+[
+  "tests.py::test_call_endpoint",
+  "tests.py::test_create_update_rate"
+]
